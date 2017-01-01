@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="../node_modules/lib/bootstrap/dist/css/bootstrap.css">-->
+    <style>
+        .navbar-right img{
+            width:50px;
+            height:50px;
+        }
+        .media-left img{
+            width:60px;
+            height:60px;
+        }
+        .dropdown-toggle img{
+            width: 40px;
+            height: 40px;
+
+        }
+        .dropdown-toggle{
+            padding:5px!important;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/about">Simba Blog</a>
+        </div>
+            <ul class="nav navbar-nav col-md-11 " >
+                <li class="active"><a href="/">首页</a></li>
+                <li><a href="/article/add">发表文章</a></li>
+                <%if(user){%>
+                <li class="navbar-right"><a href="/user/signup">注册</a></li>
+                <!--下拉依赖bootstrap.js-->
+                <li class="navbar-right dropdown">
+                    <a href="#" class="dropdown-toggle col-md-12" data-toggle="dropdown"><img src=<%=user.avatar%> alt=""><span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="###">个人主页</a></li>
+                        <li><a href="/user/signout">退出</a></li>
+                    </ul>
+                </li>
+                <%}else{%>
+                <li class="navbar-right"><a href="/user/signup">注册</a></li>
+                <li class="navbar-right"><a href="/user/signin">登录</a></li>
+                <%}%>
+
+            </ul>
+    </div>
+</nav>
+<div class="container">
+    <%if(err){%>
+    <div class="alert alert-danger"><%=err%></div>
+    <%}%>
+    <%if(success){%>
+    <div class="alert alert-success"><%=success%></div>
+    <%}%>

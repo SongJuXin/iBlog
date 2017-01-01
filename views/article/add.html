@@ -1,0 +1,23 @@
+<%-include ../include/header.html%>
+<form role="form" class="form col-md-9" method="post">
+    <div class="form-group">
+        <label for="title" class="col-md-2">标题</label>
+        <input type="text" class="col-md-10" name="title" id="title">
+    </div>
+    <div class="form-group">
+        <label for="contain" class="col-md-2">正文</label>
+        <textarea cols="30" rows="10" class="col-md-10" name="content" id="contain"></textarea>
+    </div>
+
+    <button class="btn btn-default block">提交</button>
+</form>
+<%-include ../include/footer.html%>
+<script>
+    document.querySelector('button').onclick=function () {
+        var contain=document.querySelector('#contain').value,
+            title=document.querySelector('#title').value
+        if(contain&&title){
+            document.querySelector('form').submit()
+        }
+    }
+</script>

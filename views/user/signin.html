@@ -1,0 +1,24 @@
+<%-include ../include/header.html%>
+登录
+<form role="form" method="post" class="col-md-4 col-md-offset-8">
+
+<div class="form-group">
+    <label for="username">账号</label>
+    <input type="text" name="username" id="username" class="form-control btn-lg" placeholder="Pick a username">
+</div>
+<div class="form-group">
+    <label for="password">密码</label>
+    <input type="text" name="password" id="password" class="form-control btn-lg" placeholder="Create a password">
+</div>
+<button type="button" class="btn btn-success col-md-12 btn-md">Sign In</button>
+</form>
+<%-include ../include/footer.html%>
+<script>
+    document.querySelector('button').onclick=function () {
+        var name=document.querySelector('#username').value,
+            pass=document.querySelector('#password').value
+        if(name&&pass){
+            document.querySelector('form').submit()
+        }
+    }
+</script>
