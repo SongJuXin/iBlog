@@ -2,11 +2,11 @@
 <form role="form" class="form col-md-9" method="post">
     <div class="form-group">
         <label for="title" class="col-md-2">标题</label>
-        <input type="text" class="col-md-10" name="title" id="title">
+        <input type="text" class="col-md-10" name="title" id="title" value=<%=article.title%>>
     </div>
     <div class="form-group">
         <label for="contain" class="col-md-2">正文</label>
-        <textarea cols="30" rows="10" class="col-md-10" name="content" id="contain"></textarea>
+        <textarea cols="30" rows="10" class="col-md-10" name="content" id="contain"  ><%=article.content%></textarea>
     </div>
 
     <button class="btn btn-default block">提交</button>

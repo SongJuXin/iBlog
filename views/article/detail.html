@@ -1,7 +1,43 @@
-<div class="col-md-6">
-    <div class="panel">
-        <div class="panel-heading">头</div>
-        <div class="panel-body">申通</div>
-        <div class="panel-footer">角</div>
+<%-include ../include/header.html%>
+<div class="col-md-6 ">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <%=article.title%>
+        </div>
+        <div class="panel-body"><%=article.content%></div>
+        <%if(user&&user._id==article.user){%>
+            <div class="panel-footer">
+                <a href="/article/update/<%=article._id%>" class="btn btn-warning">修改</a>
+                <a href="/article/delete/<%=article._id%>" class="btn btn-danger">删除</a>
+            </div>
+        <%}%>
+    </div>
+    <div class="panel panel-success">
+        <div class="panel-heading commentsLine ">说点啥</div>
+        <div class="panel-body ">
+            <div class="commentItem">
+                <div class="">
+                    xiaoming
+                </div>
+                <div class="commentContent">
+                    11111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊11111
+                </div>
+                <div class="pull-right">
+                    2017年1月5日23:58:31
+                </div>
+            </div>
+            <div class="commentItem">
+                <div class="">
+                    xiaoming
+                </div>
+                <div class="commentContent">
+                    11111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊1111111111111111111a啊啊啊啊啊啊啊啊11111
+                </div>
+                <div class="pull-right">
+                    2017年1月5日23:58:31
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<%-include ../include/footer.html%>

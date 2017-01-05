@@ -17,3 +17,10 @@ var ArticleSchema=new mongoose.Schema({
     user:{type:ObjectId,ref:'User'}//这个User是引用的模块
 },{collection:'article'})
 exports.Article = mongoose.model('Article',ArticleSchema);
+
+var CommentSchema=new mongoose.Schema({
+    user:{type:ObjectId,ref:'User'},
+    content:String,
+    createAt:Date
+},{collection:'comment'})
+exports.Comment=mongoose.model('Comment',CommentSchema)

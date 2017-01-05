@@ -24,7 +24,6 @@ router.post('/signup',upload.single('avatar'),function (req,res) {
                 res.redirect('back')
             }
             else if(oldUser){
-                console.log(oldUser,123)
                 req.session.err='用户名已被占用'
                 res.redirect('back')
             }
@@ -52,7 +51,6 @@ router.get('/signin',function (req,res) {
 router.post('/signin',function (req,res) {
     var body=req.body
     User.findOne(body,function (e,doc) {
-        console.log(doc)
         if(doc){
             req.session.user = doc
             res.redirect('/')
@@ -64,7 +62,6 @@ router.post('/signin',function (req,res) {
     })
 })
 router.get('/signout',function (req,res) {
-    console.log(1111)
     req.session.user=null
     res.redirect('/user/signin')
 })

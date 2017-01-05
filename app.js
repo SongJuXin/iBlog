@@ -29,7 +29,6 @@ app.use(function (req,res,next) {
     req.session.err=null
     req.session.success=null
     res.locals.user=req.session.user
-    console.log(res.locals.user,req.session.user)
     next()
 })
 
@@ -48,4 +47,4 @@ app.use('/user',user)
 app.use('/article',article)
 app.use('/about',about)
 
-app.listen(88)
+app.listen(29323)
